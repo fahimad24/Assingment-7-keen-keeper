@@ -3,6 +3,7 @@ import "./globals.css";
 import Navber from "./components/Navber";
 import { AuthProvider } from "@/context/contextApi";
 import { ToastContainer, Bounce } from "react-toastify";
+import Footer from "./components/footer/Footer";
 
 const amaranth = Amaranth({
   weight: ["400", "700"],
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
             transition={Bounce}
           />
         </AuthProvider>
+        <Footer></Footer>
       </body>
     </html>
   );

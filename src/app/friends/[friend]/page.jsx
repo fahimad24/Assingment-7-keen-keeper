@@ -39,7 +39,7 @@ const Friend = () => {
 
   if (!friends.length) {
     return (
-      <section className="container mx-auto py-15 space-y-6">
+      <section className="container mx-auto py-15 space-y-6 px-5 md:px-10 xl:p-0">
         <div className="col-span-full flex justify-center items-center py-10 h-dvh">
           <MutatingDots
             visible={true}
@@ -59,15 +59,15 @@ const Friend = () => {
 
   if (!friend) {
     return (
-      <section className="container mx-auto py-15 space-y-6">
+      <section className="container mx-auto py-15 space-y-6 px-5 md:px-10 xl:p-0">
         <p className="text-center text-lg text-red-500">Friend not found.</p>
       </section>
     );
   }
 
   return (
-    <section className="container mx-auto py-15 space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section className="container mx-auto py-15 space-y-6 px-5 md:px-10 xl:p-0">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div>
           <div className="bg-white rounded-lg shadow text-gray-600 p-6 flex flex-col items-center gap-2">
             <div className="w-16 h-16 rounded-full overflow-hidden  mx-auto">
@@ -124,8 +124,8 @@ const Friend = () => {
             </p>
           </div>
         </div>
-        <div className="md:col-span-2">
-          <div className="grid grid-cols-3 gap-4">
+        <div className="lg:col-span-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-3 p-8 bg-white rounded-xl shadow">
               <p className="text-3xl font-bold text-center text-green">
                 {friend.days_since_contact}
@@ -150,7 +150,7 @@ const Friend = () => {
               </p>
               <p className="text-gray-600 text-center">Next Due Date</p>
             </div>
-            <div className="space-y-3 p-6 bg-white rounded-xl shadow col-span-3">
+            <div className="space-y-3 p-6 bg-white rounded-xl shadow md:col-span-3">
               <div className="flex justify-between  ">
                 <p>Relationship Goal</p>
                 <button className="btn btn-sm">Edit</button>
@@ -160,7 +160,7 @@ const Friend = () => {
                 <span className="font-bold">{friend.goal} days</span>
               </p>
             </div>
-            <div className="space-y-3 p-6 bg-white rounded-xl shadow col-span-3">
+            <div className="space-y-3 p-6 bg-white rounded-xl shadow md:col-span-3">
               <h2 className="text-xl">Quick Check-In</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ">
                 <button

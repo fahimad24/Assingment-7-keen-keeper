@@ -8,8 +8,8 @@ const AddFriend = () => {
   const { friends } = useContext(AuthContext);
   return (
     <>
-      <div className="container mx-auto mt-20 space-y-6">
-        <h1 className="text-center text-5xl font-bold">
+      <div className="container mx-auto mt-20 space-y-6 px-5 md:px-10 xl:p-0">
+        <h1 className="text-center md:text-5xl text-4xl font-bold">
           Friends to keep close in your life
         </h1>
         <p className="text-center text-base text-gray-600 mt-4">
@@ -24,7 +24,7 @@ const AddFriend = () => {
         </div>
       </div>
       {/* Friend Stats */}
-      <div className="container mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-16 border-b-2 border-gray-200">
+      <div className="container mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-16 border-b-2 border-gray-200 px-5 md:px-10 xl:p-0">
         {/* Example friend cards */}
         <div className="bg-white rounded-lg shadow text-gray-600 space-y-4 py-8 p-4">
           <p className="text-center text-green font-bold text-3xl">

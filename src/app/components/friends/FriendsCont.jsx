@@ -10,7 +10,7 @@ const FriendsCont = () => {
   const { friends } = useContext(AuthContext);
 
   return (
-    <section className="container mx-auto py-15 space-y-6">
+    <section className="container mx-auto py-15 space-y-6 px-5 md:px-10 xl:p-0">
       <h2 className=" text-4xl font-bold">Your Friends</h2>
       <div>
         {/* Friend List */}

@@ -19,7 +19,7 @@ const Timeline = () => {
 
   return (
     <main>
-      <section className=" container mx-auto ">
+      <section className=" container mx-auto px-5 md:px-10 xl:p-0">
         <div className="py-20">
           <h1 className="text-5xl font-bold">Timeline</h1>
           {/* dropdown */}
@@ -50,23 +50,29 @@ const Timeline = () => {
             </ul>
           </div>
           <div className="mt-10">
-            {historyLog.map((log) => (
-              <div
-                key={log?.id}
-                className="bg-gray-100 p-4 mb-2 rounded-md flex gap-5"
-              >
-                <div className="flex justify-center items-center text-3xl w-14 rounded-full bg-gray-100 text-white">
-                  {log?.emoji}
+            {historyLog.length === 0 ? (
+              <p className="text-center text-5xl text-gray-500">
+                No history found.
+              </p>
+            ) : (
+              historyLog.map((log) => (
+                <div
+                  key={log?.id}
+                  className="bg-gray-100 p-4 mb-2 rounded-md flex gap-5"
+                >
+                  <div className="flex justify-center items-center text-3xl w-14 rounded-full bg-gray-100 text-white">
+                    {log?.emoji}
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-lg text-gray-600">
+                      <span className="text-black font-blod">{log?.type}</span>{" "}
+                      with <span>{log?.name}</span>
+                    </p>
+                    <p className="text-lg text-gray-600">{log?.date}</p>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <p className="text-lg text-gray-600">
-                    <span className="text-black font-blod">{log?.type}</span>{" "}
-                    with <span>{log?.name}</span>
-                  </p>
-                  <p className="text-lg text-gray-600">{log?.date}</p>
-                </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </section>
