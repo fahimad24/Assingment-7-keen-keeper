@@ -7,16 +7,6 @@ import Link from "next/link";
 
 const FriendsCont = () => {
   const { friends } = useContext(AuthContext);
-  const today = new Date().toISOString().split("T")[0];
-
-  // Calculate days until next contact for each friend
-  const handleAddFriendTime = (friend) => {
-    const nextDueDate = new Date(friend.next_due_date);
-    const todayDate = new Date(today);
-    const timeDiff = todayDate - nextDueDate;
-    const daysUntilNextContact = timeDiff / (1000 * 60 * 60 * 24);
-    return daysUntilNextContact;
-  };
 
   return (
     <section className="container mx-auto py-15 space-y-6">
@@ -42,7 +32,7 @@ const FriendsCont = () => {
                 />
               </div>
               <h2 className="text-xl font-bold text-center">{friend.name}</h2>
-              <p className="text-center">{handleAddFriendTime(friend)} days</p>
+              <p className="text-center">{friend.days_since_contact} days</p>
               <div className="flex flex-wrap gap-2 justify-center">
                 {friend.tags.map((tag, index) => (
                   <div
