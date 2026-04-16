@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:3000/friends.json");
+        const res = await fetch("/friends.json");
         const user = await res.json();
         setFriends(user);
       } catch (error) {

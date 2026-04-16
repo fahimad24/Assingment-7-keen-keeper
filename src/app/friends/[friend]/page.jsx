@@ -11,6 +11,7 @@ import { IoCallOutline } from "react-icons/io5";
 import { PiChatTextBold } from "react-icons/pi";
 import { PiVideoCameraBold } from "react-icons/pi";
 import { toast } from "react-toastify";
+import { MutatingDots } from "react-loader-spinner";
 
 const Friend = () => {
   const id = useParams().friend;
@@ -39,7 +40,19 @@ const Friend = () => {
   if (!friends.length) {
     return (
       <section className="container mx-auto py-15 space-y-6">
-        <p className="text-center text-lg text-gray-600">Loading friend...</p>
+        <div className="col-span-full flex justify-center items-center py-10 h-dvh">
+          <MutatingDots
+            visible={true}
+            height="100"
+            width="100"
+            color="#4fa94d"
+            secondaryColor="#4fa94d"
+            radius="12.5"
+            ariaLabel="mutating-dots-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+        </div>
       </section>
     );
   }
