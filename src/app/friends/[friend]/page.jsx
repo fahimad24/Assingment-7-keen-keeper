@@ -66,9 +66,9 @@ const Friend = () => {
   }
 
   return (
-    <section className="container mx-auto py-15 space-y-6 px-5 md:px-10 xl:p-0">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div>
+    <section className="container mx-auto  space-y-6 px-5 md:px-10 xl:p-0">
+      <div className="grid grid-cols-1 py-15 lg:grid-cols-3 gap-6">
+        <div className="flex flex-col">
           <div className="bg-white rounded-lg shadow text-gray-600 p-6 flex flex-col items-center gap-2">
             <div className="w-16 h-16 rounded-full overflow-hidden  mx-auto">
               <Image
@@ -105,7 +105,7 @@ const Friend = () => {
               Preferred: {friend.email}
             </p>
           </div>
-          <div className="bg-white rounded-lg shadow text-gray-600 py-4 mt-2">
+          <div className="bg-white rounded-lg shadow text-gray-600 py-4  mt-auto">
             <p className="flex justify-center gap-2 items-center">
               {" "}
               <HiOutlineBellSnooze /> Snooze 2 for weeks
