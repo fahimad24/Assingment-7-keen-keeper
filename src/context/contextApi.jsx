@@ -6,6 +6,8 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [friends, setFriends] = useState([]);
+  const [timeline, setTimeline] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,6 +25,8 @@ export const AuthProvider = ({ children }) => {
   const value = {
     friends,
     setFriends,
+    timeline,
+    setTimeline,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

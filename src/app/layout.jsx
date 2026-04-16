@@ -1,7 +1,8 @@
-import { Amaranth, Geist, Geist_Mono } from "next/font/google";
+import { Amaranth } from "next/font/google";
 import "./globals.css";
 import Navber from "./components/Navber";
 import { AuthProvider } from "@/context/contextApi";
+import { ToastContainer, Bounce } from "react-toastify";
 
 const amaranth = Amaranth({
   weight: ["400", "700"],
@@ -24,6 +25,19 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           <Navber />
           {children}
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+          />
         </AuthProvider>
       </body>
     </html>

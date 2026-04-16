@@ -10,11 +10,31 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { IoCallOutline } from "react-icons/io5";
 import { PiChatTextBold } from "react-icons/pi";
 import { PiVideoCameraBold } from "react-icons/pi";
+import { toast } from "react-toastify";
 
 const Friend = () => {
   const id = useParams().friend;
-  const { friends } = useContext(AuthContext);
+  const { friends, setTimeline, timeline } = useContext(AuthContext);
   const friend = friends.find((f) => f.id === Number(id)) || null;
+
+  const handleAddTimeline = (interactionType, emoji) => {
+    const newEntry = {
+      id: timeline.length + 1,
+      name: friend.name,
+      emoji: emoji || "😊",
+      friendId: friend.id,
+      type: interactionType,
+      date: new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      }),
+    };
+    setTimeline((prevTimeline) => [...prevTimeline, newEntry]);
+    toast.success(
+      `Added ${emoji} ${interactionType} interaction for ${friend.name}!`,
+    );
+  };
 
   if (!friends.length) {
     return (
@@ -130,15 +150,24 @@ const Friend = () => {
             <div className="space-y-3 p-6 bg-white rounded-xl shadow col-span-3">
               <h2 className="text-xl">Quick Check-In</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ">
-                <button className="flex flex-col items-center gap-2 bg-mainBg p-8 rounded-lg text-lg font-bold">
+                <button
+                  onClick={() => handleAddTimeline("Call", "📞")}
+                  className="flex flex-col items-center gap-2 bg-mainBg p-8 btn btn-ghost h-full rounded-lg text-lg font-bold"
+                >
                   <IoCallOutline />
                   <p>call</p>
                 </button>
-                <button className="flex flex-col items-center gap-2 bg-mainBg p-8 rounded-lg text-lg font-bold">
+                <button
+                  onClick={() => handleAddTimeline("Text", "💬")}
+                  className="flex flex-col items-center gap-2 bg-mainBg p-8 btn btn-ghost h-full rounded-lg text-lg font-bold"
+                >
                   <PiChatTextBold />
                   <p>text</p>
                 </button>
-                <button className="flex flex-col items-center gap-2 bg-mainBg p-8 rounded-lg text-lg font-bold ">
+                <button
+                  onClick={() => handleAddTimeline("Video", "📹")}
+                  className="flex flex-col items-center gap-2 bg-mainBg p-8 btn btn-ghost h-full rounded-lg text-lg font-bold "
+                >
                   <PiVideoCameraBold />
                   <p>video</p>
                 </button>
