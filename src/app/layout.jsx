@@ -1,14 +1,10 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Amaranth, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navber from "./components/Navber";
+import { AuthProvider } from "@/context/contextApi";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const amaranth = Amaranth({
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
@@ -22,11 +18,13 @@ export default function RootLayout({ children }) {
     <html
       data-theme="light"
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full bg-mainBg antialiased`}
+      className={` h-full bg-mainBg antialiased`}
     >
-      <body className="">
-        <Navber />
-        {children}
+      <body className={amaranth.className}>
+        <AuthProvider>
+          <Navber />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

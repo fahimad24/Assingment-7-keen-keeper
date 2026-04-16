@@ -1,6 +1,11 @@
+"use client";
+
 import { FiPlus } from "react-icons/fi";
+import { useContext } from "react";
+import { AuthContext } from "@/context/contextApi";
 
 const AddFriend = () => {
+  const { friends } = useContext(AuthContext);
   return (
     <>
       <div className="container mx-auto mt-20 space-y-6">
@@ -22,20 +27,30 @@ const AddFriend = () => {
       <div className="container mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-16 border-b-2 border-gray-200">
         {/* Example friend cards */}
         <div className="bg-white rounded-lg shadow text-gray-600 space-y-4 py-8 p-4">
-          <p className="text-center text-green font-bold text-3xl">10</p>
-          <p className="text-center font-semibold text-lg">Total Friends</p>
+          <p className="text-center text-green font-bold text-3xl">
+            {friends.length}
+          </p>
+          <p className="text-center font-semibold text-lg text-gray-500">
+            Total Friends
+          </p>
         </div>
         <div className="bg-white rounded-lg shadow text-gray-600 space-y-4 py-8 p-4">
-          <p className="text-center text-green font-bold text-3xl">3</p>
-          <p className="text-center font-semibold text-lg">On Track</p>
+          <p className="text-center text-green font-bold text-3xl">
+            {friends.filter((friend) => friend.status === "on-track").length}
+          </p>
+          <p className="text-center font-semibold text-lg text-gray-500">
+            On Track
+          </p>
         </div>
         <div className="bg-white rounded-lg shadow text-gray-600 space-y-4 py-8 p-4">
           <p className="text-center text-green font-bold text-3xl">6</p>
-          <p className="text-center font-semibold text-lg">Need Attention</p>
+          <p className="text-center font-semibold text-lg text-gray-500">
+            Need Attention
+          </p>
         </div>
         <div className="bg-white rounded-lg shadow text-gray-600 space-y-4 py-8 p-4">
-          <p className="text-center text-green font-bold text-3xl">12</p>
-          <p className="text-center font-semibold text-lg">
+          <p className="text-center text-green font-bold text-3xl">14</p>
+          <p className="text-center font-semibold text-lg text-gray-500">
             Interactions This Month
           </p>
         </div>
