@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 
 const Navber = () => {
   const param = usePathname();
-  console.log(param);
 
   const navItems = [
     { name: "Home", href: "/", icon: <RiHome2Line /> },
