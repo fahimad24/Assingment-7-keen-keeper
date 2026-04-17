@@ -26,7 +26,7 @@ const Timeline = () => {
           <div className="dropdown mt-5">
             <label
               tabIndex={0}
-              className="flex gap-2 justify-between py-1.5 px-3 rounded-md bg-green text-white hover:bg-green/90 w-50"
+              className="flex gap-2 justify-between py-1.5 px-3 rounded-md bg-green text-white hover:bg-green/90 w-50 cursor-pointer"
             >
               <span>Filter timeline</span>
               <MdOutlineKeyboardArrowDown />

@@ -20,7 +20,7 @@ const Stats = () => {
 
   const isAnimationActive = true;
   return (
-    <main className="md:py-20 py-10">
+    <main className="md:py-20 py-10 h-dvh">
       <section className="max-w-5xl  mx-auto  px-5 md:px-10 xl:p-0">
         <h1 className="text-5xl  font-bold">Friendship Analytics</h1>
         <div className=" bg-white shadow rounded-2xl py-10 px-5 mt-10">

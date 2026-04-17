@@ -17,7 +17,7 @@ const AddFriend = () => {
           nurture the <br /> relationships that matter most.
         </p>
         <div>
-          <button className="flex bg-green justify-center items-center text-white py-2 px-4 rounded-md mt-6 mx-auto font-bold">
+          <button className="flex bg-green justify-center items-center text-white py-2 px-4 rounded-md mt-6 mx-auto font-bold cursor-pointer hover:bg-green/90">
             <FiPlus className="mr-2" />
             Add Friend
           </button>
