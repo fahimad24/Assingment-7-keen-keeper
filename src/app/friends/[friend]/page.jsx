@@ -66,7 +66,7 @@ const Friend = () => {
   }
 
   return (
-    <main className="h-dvh">
+    <main className="bg-[radial-gradient(circle_at_top,rgba(36,77,63,0.18),transparent_45%),linear-gradient(180deg,#f8fafc_0%,#eef4f1_100%)]">
       <section className="container mx-auto  space-y-6 px-5 md:px-10 xl:p-0">
         <div className="grid grid-cols-1 py-15 lg:grid-cols-3 gap-6">
           <div className="flex flex-col">

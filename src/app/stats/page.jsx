@@ -20,7 +20,7 @@ const Stats = () => {
 
   const isAnimationActive = true;
   return (
-    <main className="md:py-20 py-10 h-dvh">
+    <main className="md:py-20 py-10 bg-[radial-gradient(circle_at_top,rgba(36,77,63,0.18),transparent_45%),linear-gradient(180deg,#f8fafc_0%,#eef4f1_100%)]">
       <section className="max-w-5xl  mx-auto  px-5 md:px-10 xl:p-0">
         <h1 className="text-5xl  font-bold">Friendship Analytics</h1>
         <div className=" bg-white shadow rounded-2xl py-10 px-5 mt-10">
