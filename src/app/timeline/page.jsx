@@ -12,7 +12,7 @@ const Timeline = () => {
     if (type === "All") {
       setHistoryLog(timeline);
     } else {
-      const filteredLog = historyLog.filter((entry) => entry.type === type);
+      const filteredLog = timeline.filter((entry) => entry.type === type);
       setHistoryLog(filteredLog);
     }
   };
