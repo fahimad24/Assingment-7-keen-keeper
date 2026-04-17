@@ -18,7 +18,7 @@ const Timeline = () => {
   };
 
   return (
-    <main>
+    <main className="h-dvh">
       <section className=" container mx-auto px-5 md:px-10 xl:p-0">
         <div className="py-20">
           <h1 className="text-5xl font-bold">Timeline</h1>
